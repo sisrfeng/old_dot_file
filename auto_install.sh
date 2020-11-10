@@ -19,6 +19,10 @@ cat> /etc/hosts<<EOF
 151.101.185.194    github.global.ssl.fastly.net
 EOF
 
+cat>>~/.bash<<EOF
+alias ai='aptitude install'
+EOF
+source ~/.bash
 
 yes | (apt-get update ; apt-get upgrade ; apt-get install zsh)
 yes | (cp ~/dot_file/.zshrc ~/ && source ~/.zshrc )
