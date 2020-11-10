@@ -1,5 +1,4 @@
 set -x
-set -e
 
 cat> /etc/hosts<<EOF
 # GitHub hosts 
@@ -27,8 +26,7 @@ alias ai='aptitude install'
 EOF
 source ~/.bashrc
 
-mkdir ~/.pip
-cat>>~/.pip/pip.conf<<EOF
+mkdir ~/.pip ; cat>>~/.pip/pip.conf<<EOF
 [global]
 index-url = https://pypi.tuna.tsinghua.edu.cn/simple
 EOF
