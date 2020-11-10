@@ -1,4 +1,5 @@
 set -x
+set -e
 
 cat> /etc/hosts<<EOF
 # GitHub hosts 
