@@ -31,8 +31,12 @@ mkdir ~/.pip ; cat>~/.pip/pip.conf<<EOF
 index-url = https://pypi.tuna.tsinghua.edu.cn/simple
 EOF
 
+#http://huanyouchen.github.io/2018/04/27/pip-install-Missing-dependencies-for-SOCKS-support/
+unset all_proxy
+unset ALL_PROXY
+
 yes | (apt-get update ; apt-get upgrade ; apt-get install zsh)
-yes | (apt install libevent-dev ; apt install libevent-dev ; apt-get install aptitude ;aptitude update ; aptitude install sudo python-pip; aptitude install git ; aptitude install tmux ;aptitude install vim-gtk; aptitude install ack ; aptitude install exiftool;  aptitude install htop; aptitude install tree ; aptitude install tzdata ; chsh -s `which zsh`; aptitude install locales ; aptitude install language-pack-zh-hans language-pack-zh-hans-base; aptitude install curl; pip install --upgrade pip ; pip install pudb ; pip install gpustat ; pip install tldr ; sh -c "$(curl -fSL https://raw.githubusercontent.com/hoseahsu/oh-my-tmux/master/install.sh)" ; curl -sLf https://spacevim.org/cn/install.sh | bash ; apt install python3-dev python3-pip python3-setuptools ; pip3 install thefuck)
+yes | (apt install libevent-dev ; apt install libevent-dev ; apt-get install aptitude ;aptitude update ; aptitude install sudo python-pip;pip install pysocks; aptitude install git ; aptitude install tmux ;aptitude install vim-gtk; aptitude install ack ; aptitude install exiftool;  aptitude install htop; aptitude install tree ; aptitude install tzdata ; chsh -s `which zsh`; aptitude install locales ; aptitude install language-pack-zh-hans language-pack-zh-hans-base; aptitude install curl; pip install --upgrade pip ; pip install pudb ; pip install gpustat ; pip install tldr ; sh -c "$(curl -fSL https://raw.githubusercontent.com/hoseahsu/oh-my-tmux/master/install.sh)" ; curl -sLf https://spacevim.org/cn/install.sh | bash ; apt install python3-dev python3-pip python3-setuptools ; pip3 install thefuck)
 
 
 yes | (pip install --upgrade pip ; apt-get install language-pack-zh-hans language-pack-zh-hans-base language-pack-gnome-zh-hans language-pack-gnome-zh-hans-base ; aptitude install peco)
