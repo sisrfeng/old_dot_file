@@ -36,7 +36,7 @@ yes | (cp ~/dot_file/.zshrc ~/ && source ~/.zshrc )
 yes | (apt install libevent-dev ; apt install libevent-dev ; apt-get install aptitude ;aptitude update ; aptitude install sudo python-pip; aptitude install git ; aptitude install tmux ;aptitude install vim-gtk; aptitude install ack ; aptitude install exiftool;  aptitude install htop; aptitude install tree ; aptitude install tzdata ; chsh -s `which zsh`; aptitude install locales ; aptitude install language-pack-zh-hans-baseaptitude install language-pack-zh-hans ; aptitude install curl; pip install --upgrade pip ; pip install pudb ; pip install gpustat ; pip install tldr ; sh -c "$(curl -fSL https://raw.githubusercontent.com/hoseahsu/oh-my-tmux/master/install.sh)" ; curl -sLf https://spacevim.org/cn/install.sh | bash ; apt install python3-dev python3-pip python3-setuptools ; pip3 install thefuck)
 
 
-yes | (pip install --upgrade pip ; apt-get install language-pack-zh-hans language-pack-zh-hans-base language-pack-gnome-zh-hans language-pack-gnome-zh-hans-base ; aptitude install scarf ;  scarf install peco)
+yes | (pip install --upgrade pip ; apt-get install language-pack-zh-hans language-pack-zh-hans-base language-pack-gnome-zh-hans language-pack-gnome-zh-hans-base ; aptitude install peco)
 
 
 #Linux日期不准确，要更改 Linux 系统整个系统范围的时区可以使用如下命令：
