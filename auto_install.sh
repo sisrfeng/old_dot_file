@@ -1,3 +1,5 @@
+set -x
+
 cat> /etc/hosts<<EOF
 # GitHub hosts 
 192.30.253.112    GitHub: Where the world builds software 
