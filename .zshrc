@@ -453,6 +453,3 @@ export PS1=">>at_here>>%{$fg[cyan]$bg[white]%}%~ "$'\n'">%{$reset_color%}"
 #Red, Blue, Green, Cyan, Yellow, Magenta, Black & White
 
 alias h='history | grep'
-
-export ALL_PROXY=socks5://219.223.187.35:4080
-alias pro='export ALL_PROXY=socks5://219.223.187.35:1080'
