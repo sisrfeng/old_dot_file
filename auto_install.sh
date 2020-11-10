@@ -24,6 +24,12 @@ alias ai='aptitude install'
 EOF
 source ~/.bashrc
 
+mkdir ~/.pip
+cat>>~/.pip/pip.conf<<EOF
+[global]
+index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+EOF
+
 yes | (apt-get update ; apt-get upgrade ; apt-get install zsh)
 yes | (cp ~/dot_file/.zshrc ~/ && source ~/.zshrc )
 yes | (apt install libevent-dev ; apt install libevent-dev ; apt-get install aptitude ;aptitude update ; ai sudo python-pip; ai git ; ai tmux ;ai vim-gtk; ai ack ; ai exiftool;  ai htop; ai tree ; ai tzdata ; chsh -s `which zsh`; ai locales ; ai language-pack-zh-hans-baseai language-pack-zh-hans ; ai curl; pip install --upgrade pip ; pip install pudb ; pip install gpustat ; pip install tldr ; sh -c "$(curl -fSL https://raw.githubusercontent.com/hoseahsu/oh-my-tmux/master/install.sh)" ; curl -sLf https://spacevim.org/cn/install.sh | bash ; apt install python3-dev python3-pip python3-setuptools ; pip3 install thefuck)
@@ -40,5 +46,6 @@ yes | (cp ~/dot_file/vimrc ~/.SpaceVim/vimrc ; cp ~/dot_file/.tmux.conf  ~/.tmux
 # 修改默认python
 sudo rm /usr/bin/python
 sudo ln -s /usr/bin/python3.? /usr/bin/python
+
 
 zsh
