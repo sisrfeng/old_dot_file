@@ -24,7 +24,8 @@ yes | (apt-get update ; apt-get upgrade ; apt-get install zsh)
 yes | (cp ~/dot_file/.zshrc ~/ && source ~/.zshrc )
 yes | (apt install libevent-dev ; apt install libevent-dev ; apt-get install aptitude ;aptitude update ; ai sudo; ai git ; ai tmux ;ai vim-gtk; ai ack ; ai exiftool;  ai htop; ai tree ; ai tzdata ; chsh -s `which zsh`; ai locales ; ai language-pack-zh-hans-baseai language-pack-zh-hans ; ai curl ; apt install peco ; pip install --upgrade pip ; pip install pudb ; pip install gpustat ; pip install tldr ; sh -c "$(curl -fSL https://raw.githubusercontent.com/hoseahsu/oh-my-tmux/master/install.sh)" ; curl -sLf https://spacevim.org/cn/install.sh | bash ; apt install python3-dev python3-pip python3-setuptools ; pip3 install thefuck)
 
-yes | (apt-get install language-pack-zh-hans language-pack-zh-hans-base language-pack-gnome-zh-hans language-pack-gnome-zh-hans-base)
+
+yes | (pip install --upgrade pip ; apt-get install language-pack-zh-hans language-pack-zh-hans-base language-pack-gnome-zh-hans language-pack-gnome-zh-hans-base)
 
 
 locale-gen zh_CN.UTF-8
