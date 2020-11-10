@@ -24,7 +24,7 @@ alias ai='aptitude install'
 EOF
 source ~/.bashrc
 
-yes | (apt-get update ; apt-get upgrade ; apt install libevent-dev ; apt install libevent-dev ; apt-get install aptitude ;aptitude update ; ai sudo; ai git ; ai zsh ; ai tmux ; ai ack ; ai exiftool;  ai htop; ai tree ; ai tzdata ; chsh -s `which zsh`; ai locales ; ai language-pack-zh-hans-baseai language-pack-zh-hans ; ai curl ;ai git ; apt install peco ; pip install --upgrade pip ; pip install pudb ; pip install gpustat ; pip install tldr ; sh -c "$(curl -fSL https://raw.githubusercontent.com/hoseahsu/oh-my-tmux/master/install.sh)" ; curl -sLf https://spacevim.org/cn/install.sh | zsh ; apt install python3-dev python3-pip python3-setuptools ; pip3 install thefuck ; cd && git clone https://github.com/sisrfeng/dot_file.git && cp ~/dot_file/.zshrc ~/ && source ~/.zshrc )
+yes | (apt-get update ; apt-get upgrade ; apt install libevent-dev ; apt install libevent-dev ; apt-get install aptitude ;aptitude update ; ai sudo; ai git ; ai zsh ; ai tmux ; ai ack ; ai exiftool;  ai htop; ai tree ; ai tzdata ; chsh -s `which zsh`; ai locales ; ai language-pack-zh-hans-baseai language-pack-zh-hans ; ai curl ;ai git ; apt install peco ; pip install --upgrade pip ; pip install pudb ; pip install gpustat ; pip install tldr ; sh -c "$(curl -fSL https://raw.githubusercontent.com/hoseahsu/oh-my-tmux/master/install.sh)" ; curl -sLf https://spacevim.org/cn/install.sh | zsh ; apt install python3-dev python3-pip python3-setuptools ; pip3 install thefuck)
 
 
 #Linux日期不准确，要更改 Linux 系统整个系统范围的时区可以使用如下命令：
@@ -34,7 +34,7 @@ sudo ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 sudo rm /usr/bin/python
 sudo ln -s /usr/bin/python3.? /usr/bin/python
 
-yes | (cp ~/dot_file/vimrc ~/.SpaceVim/vimrc ; cp ~/dot_file/.tmux.conf  ~/.tmux.conf ; cp ~/dot_file/init.toml  ~/.SpaceVim.d/init.toml)
+yes | (cp ~/dot_file/vimrc ~/.SpaceVim/vimrc ; cp ~/dot_file/.tmux.conf  ~/.tmux.conf ; cp ~/dot_file/init.toml  ~/.SpaceVim.d/init.toml; cp ~/dot_file/.zshrc ~/ && source ~/.zshrc )
 
 
 
