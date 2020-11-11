@@ -47,4 +47,4 @@ locale-gen zh_CN.UTF-8 ; sudo rm -f /etc/localtime && sudo ln -s /usr/share/zone
 
 
 # 修改默认python
-sudo rm /usr/bin/python  ; sudo ln -s /usr/bin/python3.? /usr/bin/python ; hstr --show-configuration >> ~/.zshrc && . ~/.zshrc  ; zsh
+sudo rm /usr/bin/python  ; sudo ln -s /usr/bin/python3.? /usr/bin/python ; zsh
