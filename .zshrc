@@ -234,7 +234,7 @@ zstyle ':completion:*:corrections' format $'\e[01;32m -- %d (errors: %e) --\e[0m
 
 alias s='vi ~/.zshrc'
 alias sr='zsh'
-alias tm='tmux a -d ；tmux new -s jiqun'
+alias tm='tmux a -d ; tmux new -s jiqun'
 alias t='mv -ft /opt/data/private/trash'
 alias v='vim'
 alias vi='vim'
