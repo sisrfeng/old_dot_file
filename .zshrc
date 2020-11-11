@@ -454,3 +454,4 @@ export PS1=">>at_here>>%{$fg[cyan]$bg[white]%}%~ "$'\n'">%{$reset_color%}"
 #Red, Blue, Green, Cyan, Yellow, Magenta, Black & White
 
 alias h='history | grep'
+alias nopro='export ALL_PROXY= '
