@@ -309,7 +309,6 @@ alias wgname='wget -c -O "change_name"'
 alias ns='nvidia-smi'
 alias h='history | grep'
 alias mcd='mcd(){ mkdir $1 && cd $1; }; mcd'
-alias git='pro &&  git'
 alias top='htop'
 
 #autoload -U wf_
@@ -455,3 +454,4 @@ export PS1=">>at_here>>%{$fg[cyan]$bg[white]%}%~ "$'\n'">%{$reset_color%}"
 
 alias h='history | grep'
 alias nopro='export ALL_PROXY= '
+#alias git='pro &&  git'
