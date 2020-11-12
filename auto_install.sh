@@ -35,7 +35,7 @@ EOF
 unset all_proxy
 unset ALL_PROXY
 
-yes | (sudo add-apt-repository ppa:ultradvorka/ppa && sudo apt-get update && sudo apt-get install hstr ;apt-get upgrade ; apt-get install zsh)
+yes | (add-apt-repository ppa:ultradvorka/ppa && apt-get update && apt-get install hstr ;apt-get upgrade ; apt-get install zsh)
 
 yes | (apt install libevent-dev ; apt install libevent-dev ; apt-get install aptitude ;aptitude update ; aptitude install sudo python3-pip;pip3 install pysocks; aptitude install git ; aptitude install tmux ;aptitude install vim-gtk; aptitude install ack ; aptitude install exiftool;  aptitude install htop; aptitude install tree ; aptitude install tzdata ; chsh -s `which zsh`; aptitude install locales ; aptitude install language-pack-zh-hans language-pack-zh-hans-base; aptitude install curl; pip3 install --upgrade pip ; pip3 install pudb ; pip3 install gpustat ; pip3 install tldr ; sh -c "$(curl -fSL https://raw.githubusercontent.com/hoseahsu/oh-my-tmux/master/install.sh)" ; curl -sLf https://spacevim.org/cn/install.sh | bash ; apt install python3-dev python3-pip python3-setuptools ; pip3 install thefuck)
 
