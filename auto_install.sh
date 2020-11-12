@@ -56,8 +56,12 @@ chmod u+x nvim.appimage
 # Optional: exposing nvim globally
 mv squashfs-root / && ln -s /squashfs-root/AppRun /usr/bin/vim
 
+yes | (aptitude install silversearcher-ag)
+
 # 修改默认python
-sudo rm /usr/bin/python  ; sudo ln -s /usr/bin/python3.? /usr/bin/python ; zsh
+sudo rm /usr/bin/python 
+sudo ln -s /usr/bin/python3.? /usr/bin/python 
+zsh
 
 #todo
 # 要用vim 8以上版本，ycm不支持vim7.4，执行vimplus的install.sh会自动去下载最新的vim，但因为网络问题，git clone可能会失败，导致vim安装失败，你要确保vim版本必须是8以上的。
