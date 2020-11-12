@@ -52,7 +52,7 @@ chmod u+x nvim.appimage
 ./squashfs-root/AppRun --version
 
 # Optional: exposing nvim globally
-mv squashfs-root / && ln -s /squashfs-root/AppRun /usr/bin/vnvim
+mv squashfs-root / && ln -s /squashfs-root/AppRun /usr/bin/vim
 
 # 修改默认python
 sudo rm /usr/bin/python  ; sudo ln -s /usr/bin/python3.? /usr/bin/python ; zsh
