@@ -54,6 +54,7 @@ chmod u+x nvim.appimage
 ./nvim.appimage --appimage-extract
 ./squashfs-root/AppRun --version
 # Optional: exposing nvim globally
+yes | rm /usr/bin/vim
 mv squashfs-root / && ln -s /squashfs-root/AppRun /usr/bin/vim
 
 yes | (aptitude install silversearcher-ag)
