@@ -31,6 +31,8 @@ mkdir ~/.pip ; cat>~/.pip/pip.conf<<EOF
 index-url = https://pypi.tuna.tsinghua.edu.cn/simple
 EOF
 
+yes | (ln -s /opt/data/private/anaconda3 ~/)
+
 #http://huanyouchen.github.io/2018/04/27/pip-install-Missing-dependencies-for-SOCKS-support/
 unset all_proxy
 unset ALL_PROXY
