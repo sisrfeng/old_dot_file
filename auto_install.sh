@@ -48,6 +48,7 @@ yes | (apt-get install language-pack-zh-hans language-pack-zh-hans-base ; aptitu
 locale-gen zh_CN.UTF-8 
 sudo rm -f /etc/localtime && sudo ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 yes | (cp ~/dot_file/vimrc ~/.SpaceVim/vimrc ; cp ~/dot_file/.tmux.conf  ~/.tmux.conf )
+mkdir -p ~/.SpaceVim.d/
 yes | (cp ~/dot_file/init.toml  ~/.SpaceVim.d/; cp ~/dot_file/.zshrc ~/ )  
 
 #nvim
