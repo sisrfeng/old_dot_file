@@ -448,7 +448,7 @@ promptinit
 autoload -U colors && colors
 #export PS1="%S %F%d%f %s num_of_job:%j  
 #export PS1="%S %F%d%f %s  "$'\n'" >"
-export PS1=">>at_here>>%{$fg[cyan]$bg[white]%}%~ "$'\n'">%{$reset_color%}"
+export PS1="@ %{$fg[cyan]$bg[white]%}%~ "$'\n'">%{$reset_color%}"
 #Red, Blue, Green, Cyan, Yellow, Magenta, Black & White
 
 alias h='history | grep'
