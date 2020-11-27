@@ -309,6 +309,7 @@ alias ns='nvidia-smi'
 alias h='history | grep'
 alias mcd='mcd(){ mkdir $1 && cd $1; }; mcd'
 alias top='htop'
+alias gc='git clone'
 
 #autoload -U wf_
 #wf_ -Uz chpwd (){ ls -1GhtrFB; }
