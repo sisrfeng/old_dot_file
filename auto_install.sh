@@ -127,8 +127,8 @@ EOF
 yes | (ln -s /opt/data/private/anaconda3 ~/)
 
 #http://huanyouchen.github.io/2018/04/27/pip-install-Missing-dependencies-for-SOCKS-support/
-unset all_proxy
-unset ALL_PROXY
+# unset all_proxy
+# unset ALL_PROXY
 
 yes | (add-apt-repository ppa:ultradvorka/ppa && apt-get update && apt-get install hstr ;apt-get upgrade ; apt-get install zsh)
 
