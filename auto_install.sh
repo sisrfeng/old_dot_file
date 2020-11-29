@@ -111,7 +111,7 @@ cat> /etc/hosts<<EOF
 EOF
 
 cat>>~/.bashrc<<EOF
-alias ai='aptitude install'
+alias ai='aptitude install -qy'
 EOF
 source ~/.bashrc
 
