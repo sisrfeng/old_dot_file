@@ -131,8 +131,8 @@ yes | (ln -s /opt/data/private/anaconda3 ~/)
 # unset all_proxy
 # unset ALL_PROXY
 
-yes | (add-apt-repository ppa:ultradvorka/ppa && apt-get update && apt-get install hstr ;apt-get upgrade ; apt-get install zsh)
-yes | (apt install libevent-dev ; apt install libevent-dev ; apt-get install aptitude ;aptitude update ; aptitude install sudo python3-pip)
+yes | (add-apt-repository ppa:ultradvorka/ppa && apt-get update && apt-get upgrade)
+yes | (apt install aptitude ;aptitude update ; aptitude install sudo python3-pip hstr zsh progress libevent-dev)
 
 export ALL_PROXY=' '
 pip3 install pysocks
