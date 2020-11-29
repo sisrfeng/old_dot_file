@@ -454,6 +454,5 @@ export PS1="@ %{$fg[cyan]$bg[white]%}%~ "$'\n'">%{$reset_color%}"
 
 alias h='history | grep'
 alias nopro='export ALL_PROXY= '
-alias pro='export ALL_PROXY=socks5://333.333.333.22:4080'
-# alias git='pro &&  git'
+alias git='pro &&  git'
 pro
