@@ -115,7 +115,7 @@ alias ai='apt install -y -qq'
 EOF
 source ~/.bashrc
 
-apt-get install nscd
+ai install nscd 
 /etc/init.d/nscd restart
 
 pip3 install pysocks
