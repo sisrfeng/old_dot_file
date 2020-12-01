@@ -138,7 +138,11 @@ export ALL_PROXY=' '
 pip3 install pysocks
 pro
 
-yes | (aptitude install git ; aptitude install tmux ;aptitude install vim-gtk; aptitude install ack ; aptitude install exiftool;  aptitude install htop; aptitude install tree ; aptitude install tzdata ; chsh -s `which zsh`; aptitude install locales ; aptitude install language-pack-zh-hans language-pack-zh-hans-base; aptitude install curl; pip3 install --upgrade pip ; pip3 install pudb ; pip3 install gpustat ; pip3 install tldr ; sh -c "$(curl -fSL https://raw.githubusercontent.com/hoseahsu/oh-my-tmux/master/install.sh)" ; curl -sLf https://spacevim.org/cn/install.sh | bash ; apt install python3-dev python3-pip python3-setuptools ; pip3 install thefuck)
+yes | (aptitude install git ; aptitude install tmux ;aptitude install vim-gtk; aptitude install ack)
+yes | (aptitude install exiftool htop tree zdata locales language-pack-zh-hans language-pack-zh-hans-base)
+yes | (aptitude install curl; pip3 install --upgrade pip ; pip3 install pudb ; pip3 install gpustat ; pip3 install tldr )
+yes | (sh -c "$(curl -fSL https://raw.githubusercontent.com/hoseahsu/oh-my-tmux/master/install.sh)" ; curl -sLf https://spacevim.org/cn/install.sh | bash )
+yes | (apt install python3-dev python3-pip python3-setuptools ; pip3 install thefuck)
 yes | (apt-get install language-pack-zh-hans language-pack-zh-hans-base ; aptitude install peco wget)
 
 #Linux日期不准确，要更改 Linux 系统整个系统范围的时区可以使用如下命令：
@@ -165,6 +169,7 @@ yes | unminimize
 # 修改默认python
 sudo rm /usr/bin/python 
 sudo ln -s /usr/bin/python3.? /usr/bin/python 
+chsh -s `which zsh`; 
 zsh
 
 #todo
