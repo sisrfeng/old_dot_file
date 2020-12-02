@@ -144,6 +144,7 @@ yes | (aptitude install curl; pip3 install --upgrade pip ; pip3 install pudb ; p
 yes | (sh -c "$(curl -fSL https://raw.githubusercontent.com/hoseahsu/oh-my-tmux/master/install.sh)" ; curl -sLf https://spacevim.org/cn/install.sh | bash )
 yes | (apt install python3-dev python3-pip python3-setuptools ; pip3 install thefuck)
 yes | (apt-get install language-pack-zh-hans language-pack-zh-hans-base ; aptitude install peco wget)
+yes | (ai npm; npm install -g tldr)
 
 #Linux日期不准确，要更改 Linux 系统整个系统范围的时区可以使用如下命令：
 locale-gen zh_CN.UTF-8 
