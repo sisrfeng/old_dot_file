@@ -452,3 +452,4 @@ alias h='history | grep'
 alias nopro='export ALL_PROXY= '
 alias git='pro &&  git'
 pro
+bindkey -s "\C-o" "clear \C-j"    
