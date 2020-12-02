@@ -1,0 +1,125 @@
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias _=sudo
+alias a=ag
+alias ac=ack
+alias ack='nocorrect ack'
+alias ai='aptitude install'
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e ''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'')"'
+alias b='${(z)BROWSER}'
+alias bower='noglob bower'
+alias c=cp
+alias cd='nocorrect cd'
+alias cp='cp -ir'
+alias cpi='nocorrect cp -i'
+alias d='dirs -v | head -10'
+alias db=pudb3
+alias df='df -h'
+alias diffu='diff --unified'
+alias du='du -h'
+alias e='${(z)VISUAL:-${(z)EDITOR}}'
+alias ebuild='nocorrect ebuild'
+alias egrep='egrep --color=auto'
+alias fc='noglob fc'
+alias fd='f(){ find "$1" -path "*$2*"; }; f'
+alias fdroot='f(){ find / -path "*$1*"; }; f'
+alias fgrep='fgrep --color=auto'
+alias find='noglob find'
+alias fsh-alias=fast-theme
+alias ftp='noglob ftp'
+alias g='gpustat -p -u -c --debug --no-header'
+alias gc='git clone'
+alias gcc='nocorrect gcc'
+alias get='curl --continue-at - --location --progress-bar --remote-name --remote-time'
+alias gist='nocorrect gist'
+alias git='pro &&  git'
+alias globurl='noglob urlglobber '
+alias grep='grep --color=auto'
+alias h='history | grep'
+alias help=run-help
+alias heroku='nocorrect heroku'
+alias hh=hstr
+alias history='noglob history'
+alias history-stat='history 0 | awk ''{print $2}'' | sort | uniq -c | sort -n -r | head'
+alias hl='f(){ du -sh $1* | sort -hr; }; f'
+alias ht='houtai(){ nohup  >$1 2>&1 &; }; houtai'
+alias http-serve='python3 -m http.server'
+alias i=myip
+alias k9='kill -9'
+alias l='ls -1htr --color=alway'
+alias l.='ls -d .* --color=auto'
+alias la='ls -ACF1GhFBtr --color=alway'
+alias lc='lt -c'
+alias lk='ll -Sr'
+alias ll='ls -gGhtrFB --color=auto'
+alias lla='ls -gGhtrFBA --color=auto'
+alias lm='la | "$PAGER"'
+alias ln='nocorrect ln -i'
+alias lni='nocorrect ln -i'
+alias locate='noglob locate'
+alias lr='ls -gGhtFB --color=auto'
+alias ls='ls -hrt --color=auto'
+alias lt='ll -tr'
+alias lu='lt -u'
+alias lx='ll -XB'
+alias m=mv
+alias man='nocorrect man'
+alias mcd='mcd(){ mkdir $1 && cd $1; }; mcd'
+alias md='mkdir -p'
+alias mkdir='nocorrect mkdir -p'
+alias mt='mv -t ~/Trash'
+alias mv='mv -i'
+alias mvi='nocorrect mv -i'
+alias myip='curl cip.cc'
+alias mysql='nocorrect mysql'
+alias nopro='export ALL_PROXY= '
+alias ns=nvidia-smi
+alias o=xdg-open
+alias p='${(z)PAGER}'
+alias pbc=pbcopy
+alias pbp=pbpaste
+alias pi='pip install'
+alias pip='pip -q'
+alias pip3=pip
+alias po=popd
+alias pro='export ALL_PROXY=socks5://219.223.187.35:4080'
+alias pu=pushd
+alias py=python
+alias python='python -W ignore'
+alias python3=python
+alias r=tldr
+alias rake='noglob rake'
+alias rm='rm -Ir --preserve-root'
+alias rmi='nocorrect rm -i'
+alias rsync='noglob rsync'
+alias s='vi ~/.zshrc ; sr'
+alias sa='alias | grep -i'
+alias sc=source
+alias scp='noglob scp'
+alias sftp='noglob sftp'
+alias sl=ls
+alias sr=zsh
+alias srm='rm -Irf --preserve-root'
+alias t='mv -ft /opt/data/private/trash'
+alias ta='tail -fn 50 nohup.out'
+alias tm='tmux a -d ; tmux new -s jiqun'
+alias top=htop
+alias topc='top -o %CPU'
+alias topm='top -o %MEM'
+alias type='type -a'
+alias ut=ntat
+alias uz=unzip
+alias v=vim
+alias vd='vim -d'
+alias vi=vim
+alias vr='vi ~/.SpaceVim/vimrc'
+alias vt='vim ~/.tmux.conf'
+alias wfpid='ps -aux |grep -v grep|grep'
+alias wg='wget -c'
+alias wget='wget -c'
+alias wgname='wget -c -O "change_name"'
+alias which-command=whence
+alias x=extract
+alias z='_z 2>&1'

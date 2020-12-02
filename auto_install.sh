@@ -23,73 +23,39 @@ cat> /etc/hosts<<EOF
 ## some may be the same
 ## GitHub Start
 192.30.253.112 http://github.com
-
 192.30.253.113 http://github.com
-
 151.101.184.133 http://assets-cdn.github.com
-
 151.101.185.194 http://github.global.ssl.fastly.net
-
 192.30.253.112 http://github.com
-
 192.30.253.113 http://github.com
-
 192.30.253.118 http://gist.github.com
-
 151.101.185.194 http://github.global.ssl.fastly.net
-
 151.101.129.194 http://github.global.ssl.fastly.net
-
 151.101.65.194 http://github.global.ssl.fastly.net
-
 151.101.1.194 http://github.global.ssl.fastly.net
-
 151.101.193.194 http://github.global.ssl.fastly.net
-
 151.101.77.194 http://github.global.ssl.fastly.net
-
 151.101.229.194 http://github.global.ssl.fastly.net
-
 151.101.113.194 http://github.global.ssl.fastly.net
-
 151.101.196.133 http://assets-cdn.github.com
-
 151.101.24.133 http://assets-cdn.github.com
-
 185.199.111.153 http://assets-cdn.github.com
-
 185.199.110.153 http://assets-cdn.github.com
-
 185.199.108.153 http://assets-cdn.github.com
-
 185.199.109.153 http://assets-cdn.github.com
-
 151.101.112.133 http://assets-cdn.github.com
-
 151.101.112.133 http://avatars0.githubusercontent.com
-
 151.101.112.133 http://avatars1.githubusercontent.com
-
 151.101.184.133 http://avatars2.githubusercontent.com
-
 151.101.12.133 http://avatars3.githubusercontent.com
-
 151.101.12.133 http://avatars4.githubusercontent.com
-
 151.101.184.133 http://avatars5.githubusercontent.com
-
 151.101.184.133 http://avatars6.githubusercontent.com
-
 151.101.184.133 http://avatars7.githubusercontent.com
-
 151.101.12.133 http://avatars8.githubusercontent.com
-
 151.101.184.133 http://raw.githubusercontent.com
-
 151.101.112.133 http://gist.githubusercontent.com
-
 151.101.184.133 http://cloud.githubusercontent.com
-
 151.101.112.133 http://camo.githubusercontent.com
 
 52.216.227.168 http://github-cloud.s3.amazonaws.com
@@ -104,16 +70,16 @@ cat> /etc/hosts<<EOF
 
 # 下载慢问题
 219.76.4.4 http://github-cloud.s3.amazonaws.com
-
 ## GitHub End
-
-
 EOF
 
 cat>>~/.bashrc<<EOF
 alias ai='apt install -y -qq'
 EOF
 source ~/.bashrc
+
+ln -s ~/dot_file/.condarc ~/
+ln -s ~/dot_file/.wf_alias ~/
 
 ai install nscd 
 /etc/init.d/nscd restart
@@ -126,7 +92,6 @@ pip3 install pysocks
 # EOF
 
 yes | (ln -s /opt/data/private/anaconda3 ~/)
-
 #http://huanyouchen.github.io/2018/04/27/pip-install-Missing-dependencies-for-SOCKS-support/
 # unset all_proxy
 # unset ALL_PROXY
