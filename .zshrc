@@ -311,19 +311,15 @@ alias mcd='mcd(){ mkdir $1 && cd $1; }; mcd'
 alias top='htop'
 alias gc='git clone'
 
-#autoload -U wf_
-#wf_ -Uz chpwd (){ ls -1GhtrFB; }
-#cl() { cd "$@" && ls -1GhtrFB; }
 function list_all() {
     emulate -L zsh
-    ls -1GhtrFB --color=alway
+    ls -l1GhtrFB --color=always
 }
 function wf_print() {
     emulate -L zsh
-    echo "----------------split--line---------------------"
+    echo "----------------上面的是ls的文件--------------------"
 }
 chpwd_functions=(${chpwd_functions[@]} "list_all" "wf_print")
-
 
  # 00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
  # Text color codes:
