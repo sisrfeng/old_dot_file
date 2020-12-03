@@ -84,7 +84,6 @@ ln -s ~/dot_file/.wf_alias ~/
 ai install nscd 
 /etc/init.d/nscd restart
 
-pip3 install pysocks
 
 # mkdir ~/.pip ; cat>~/.pip/pip.conf<<EOF
 # [global]
