@@ -50,7 +50,8 @@ mkdir -p ~/.SpaceVim.d/
 yes | (cp ~/dot_file/init.toml  ~/.SpaceVim.d/; cp ~/dot_file/.zshrc ~/ )  
 
 #nvim
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+# curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+#下载好在dot_file了
 chmod u+x nvim.appimage
 ./nvim.appimage
 ./nvim.appimage --appimage-extract
