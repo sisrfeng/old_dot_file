@@ -1,14 +1,10 @@
 set -x
-
 cat git_url.txt>>/etc/hosts
-# Ubuntu uses network-manager instead of the traditional Linux networking model. so you should restart the network-manager service instead of the network service
+##### Ubuntu uses network-manager instead of the traditional Linux networking model. so you should restart the network-manager service instead of the network service
 # /etc/rc.d/init.d/network restart
 service network-manager restart
 
-cat>>~/.bashrc<<EOF
 alias ai='apt install -y -qq'
-EOF
-source ~/.bashrc
 
 ln -s ~/dot_file/.condarc ~/
 ln -s ~/dot_file/.wf_alias ~/
@@ -19,14 +15,10 @@ ai install nscd
 
 # mkdir ~/.pip ; cat>~/.pip/pip.conf<<EOF
 # [global]
-# index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+# index-url = https::
 # EOF
 
 yes | (ln -s /opt/data/private/anaconda3 ~/)
-#http://huanyouchen.github.io/2018/04/27/pip-install-Missing-dependencies-for-SOCKS-support/
-# unset all_proxy
-# unset ALL_PROXY
-
 yes | (add-apt-repository ppa:ultradvorka/ppa && apt-get update && apt-get upgrade)
 yes | (apt install aptitude ;aptitude update ; ai sudo python3-pip hstr zsh progress libevent-dev)
 
