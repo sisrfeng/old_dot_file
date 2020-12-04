@@ -4,11 +4,11 @@ cat git_url.txt>>/etc/hosts
 # /etc/rc.d/init.d/network restart
 service network-manager restart
 
-alias ai='apt install -y -qq'
-
 ln -s ~/dot_file/.condarc ~/
 ln -s ~/dot_file/.wf_alias ~/
 
+shopt -s  expand_aliases 
+alias ai='apt install -y -qq'
 ai install nscd 
 /etc/init.d/nscd restart
 
