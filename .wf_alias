@@ -91,7 +91,6 @@ alias pi='pip install'
 alias pip='pip -q'
 alias pip3=pip
 alias po=popd
-alias pro='export ALL_PROXY=socks5://219.223.187.35:4080'
 alias pu=pushd
 alias py=python
 alias python='python -W ignore'

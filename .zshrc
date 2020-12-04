@@ -345,7 +345,7 @@ autoload -U colors && colors
 export PS1="3d容器-当前路径 %{$fg[cyan]$bg[white]%}%~ "$'\n'">%{$reset_color%}"
 #Red, Blue, Green, Cyan, Yellow, Magenta, Black & White
 
-export ALL_PROXY=socks5://219.223.187.35:4080
+export ALL_PROXY=socks5://填你的ip:你的端口
 echo "新zsh"
 
 bindkey -s "\C-o" "clear \C-j"
