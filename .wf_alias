@@ -1,5 +1,5 @@
-alias apt='apt -q'
-alias apt-get='apt -q'
+alias apt='apt -q -y'
+alias apt-get='apt -q -y'
 #/* 加了这行导致./build_ops.sh等执行不了 */
 #/* alias alias -s sh=vi */
 alias ..='cd ..'
@@ -12,8 +12,6 @@ alias ac=ack
 alias ack='nocorrect ack'
 alias ai='apt -q install'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e ''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'')"'
-alias apt='apt -q'
-alias apt-get='apt-get -q'
 alias b='${(z)BROWSER}'
 alias bower='noglob bower'
 alias c=cp
@@ -31,9 +29,8 @@ alias egrep='egrep --color=auto'
 alias fc='noglob fc'
 
 alias f='f(){ find . -name "*$1*"; }; f'
-alias f/='f(){ find / -name "*$1*"; }; f'
+alias f/='f_2(){ find / -name "*$1*"; }; f_2'
 alias fd='f_wf(){ find "$1" -name "*$2*"; }; f_wf'
-alias fdroot='f(){ find / -name "*$1*"; }; f'
 
 alias fgrep='fgrep --color=auto'
 alias find='noglob find'
@@ -53,7 +50,7 @@ alias heroku='nocorrect heroku'
 alias hh=hstr
 alias history='noglob history'
 alias history-stat='history 0 | awk ''{print $2}'' | sort | uniq -c | sort -n -r | head'
-alias hl='f(){ du -sh $1* | sort -hr; }; f'
+alias hl='f_hl(){ du -sh $1* | sort -hr; }; f_hl'
 alias ht='houtai(){ nohup  >$1 2>&1 &; }; houtai'
 alias http-serve='python3 -m http.server'
 alias i=myip
