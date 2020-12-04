@@ -29,8 +29,12 @@ alias e='${(z)VISUAL:-${(z)EDITOR}}'
 alias ebuild='nocorrect ebuild'
 alias egrep='egrep --color=auto'
 alias fc='noglob fc'
-alias fd='f(){ find "$1" -path "*$2*"; }; f'
-alias fdroot='f(){ find / -path "*$1*"; }; f'
+
+alias f='f(){ find . -name "*$1*"; }; f'
+alias f/='f(){ find / -name "*$1*"; }; f'
+alias fd='f_wf(){ find "$1" -name "*$2*"; }; f_wf'
+alias fdroot='f(){ find / -name "*$1*"; }; f'
+
 alias fgrep='fgrep --color=auto'
 alias find='noglob find'
 alias fsh-alias=fast-theme

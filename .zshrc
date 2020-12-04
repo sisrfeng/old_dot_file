@@ -222,7 +222,7 @@ zstyle ':completion:*:corrections' format $'\e[01;32m -- %d (errors: %e) --\e[0m
 
 function list_all() {
     emulate -L zsh
-    ls -1GhtrFB --color=alway
+    ls -lGhtrFB --color=alway
 }
 function wf_print() {
     emulate -L zsh
