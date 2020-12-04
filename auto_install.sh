@@ -26,7 +26,7 @@ export ALL_PROXY=' '
 pip3 install pysocks
 pro
 
-yes | (ai git ; ai tmux ;ai vim-gtk; ai ack)
+yes | (ai htop ; ai tmux ;ai vim-gtk; ai ack)
 yes | (ai exiftool htop tree zdata locales language-pack-zh-hans language-pack-zh-hans-base)
 yes | (ai curl; pip3 install --upgrade pip ; pip3 install pudb ; pip3 install gpustat ; pip3 install tldr )
 yes | (sh -c "$(curl -fSL https://raw.githubusercontent.com/hoseahsu/oh-my-tmux/master/install.sh)" ; curl -sLf https://spacevim.org/cn/install.sh | bash )
