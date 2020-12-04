@@ -23,6 +23,8 @@ yes | (add-apt-repository ppa:ultradvorka/ppa && apt-get -qq update && apt-get -
 yes | (apt install aptitude ;aptitude update -q; ai sudo python3-pip hstr zsh progress libevent-dev)
 
 unset ALL_PROXY
+pip install --upgrade pip
+pip3 install --upgrade pip
 pip3 install pysocks
 yes | (ai htop ; ai tmux ;ai vim-gtk; ai ack)
 yes | (ai exiftool htop tree zdata locales language-pack-zh-hans language-pack-zh-hans-base)
