@@ -22,10 +22,8 @@ yes | (ln -s /opt/data/private/anaconda3 ~/)
 yes | (add-apt-repository ppa:ultradvorka/ppa && apt-get -qq update && apt-get -qq upgrade)
 yes | (apt install aptitude ;aptitude update -q; ai sudo python3-pip hstr zsh progress libevent-dev)
 
-export ALL_PROXY=' '
+unset ALL_PROXY
 pip3 install pysocks
-pro
-
 yes | (ai htop ; ai tmux ;ai vim-gtk; ai ack)
 yes | (ai exiftool htop tree zdata locales language-pack-zh-hans language-pack-zh-hans-base)
 yes | (ai curl; pip3 install --upgrade pip ; pip3 install pudb ; pip3 install gpustat ; pip3 install tldr )

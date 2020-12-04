@@ -81,7 +81,8 @@ alias mv='mv -i'
 alias mvi='nocorrect mv -i'
 alias myip='curl cip.cc'
 alias mysql='nocorrect mysql'
-alias nopro='export ALL_PROXY= '
+alias nopro='unset ALL_PROXY'
+alias np='unset ALL_PROXY'
 alias ns=nvidia-smi
 alias o=xdg-open
 alias p='${(z)PAGER}'
