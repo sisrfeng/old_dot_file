@@ -9,6 +9,7 @@ ln -s ~/dot_file/.wf_alias ~/
 
 shopt -s  expand_aliases 
 alias ai='apt install -y -qq'
+alias pip3='pip3 -qq'
 ai install nscd 
 /etc/init.d/nscd restart
 
@@ -31,7 +32,7 @@ yes | (apt-get install language-pack-zh-hans language-pack-zh-hans-base ; ai pec
 touch ~/.msmtp.log
 postconf smtputf8_enable=no
 postfix reload
-yes | (ai npm; npm install -g tldr)
+yes | (ai node-gyp npm; npm install -g tldr)
 
 #Linux日期不准确，要更改 Linux 系统整个系统范围的时区可以使用如下命令：
 locale-gen zh_CN.UTF-8 
