@@ -19,6 +19,7 @@ ai install nscd
 # index-url = https::
 # EOF
 
+yes | unminimize
 yes | (ln -s /opt/data/private/anaconda3 ~/)
 yes | (add-apt-repository ppa:ultradvorka/ppa && apt-get -qq update && apt-get -qq upgrade)
 yes | (apt install aptitude ;aptitude update -q; ai sudo python3-pip hstr zsh progress libevent-dev)
@@ -30,9 +31,7 @@ yes | (sh -c "$(curl -fSL https://raw.githubusercontent.com/hoseahsu/oh-my-tmux/
 yes | (apt install python3-dev python3-pip python3-setuptools ; pip3 install thefuck)
 yes | (apt-get install language-pack-zh-hans language-pack-zh-hans-base ; ai peco wget mutt msmtp)
 touch ~/.msmtp.log
-postconf smtputf8_enable=no
-postfix reload
-yes | (ai node-gyp npm; npm install -g tldr)
+yes | (aptitude install npm; npm install -g tldr)
 
 #Linux日期不准确，要更改 Linux 系统整个系统范围的时区可以使用如下命令：
 locale-gen zh_CN.UTF-8 
@@ -62,7 +61,11 @@ sudo apt install python3-neovim
 
 yes | (ai silversearcher-ag)
 mv /etc/apt/apt.conf /etc/apt/apt.conf.luoyi
-yes | unminimize
+
+#应该需要手动
+##需要交互; aptitude install -y postfix
+postconf smtputf8_enable=no
+postfix reload
 
 # 修改默认python
 rm /usr/bin/python 
