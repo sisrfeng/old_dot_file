@@ -1,10 +1,6 @@
 # Antigen: https://github.com/zsh-users/antigen
 ANTIGEN="$HOME/.local/bin/antigen.zsh"
 
-if [ -f ~/.alias ]; then
-    . ~/.alias
-fi
-
 # Install antigen.zsh if not exist
 if [ ! -f "$ANTIGEN" ]; then
 	echo "Installing antigen ..."
@@ -30,10 +26,6 @@ if [ ! -f "$ANTIGEN" ]; then
 	mv "$TMPFILE" "$ANTIGEN"
 fi
 
-
-## WSL (aka Bash for Windows) doesn't work well with BG_NICE
-#[ -d "/mnt/c" ] && [[ "$(uname -a)" == *Microsoft* ]] && unsetopt BG_NICE
-
 # Load local bash/zsh compatible settings
 _INIT_SH_NOFUN=1
 _INIT_SH_NOLOG=1
@@ -47,9 +39,8 @@ _INIT_SH_NOLOG=1
 source "$ANTIGEN"
 
 # Setup dir stack
-DIRSTACKSIZE=10
+DIRSTACKSIZE=15
 setopt autopushd pushdminus pushdsilent pushdtohome pushdignoredups cdablevars
-alias d='dirs -v | head -10'
 
 # Disable correction
 unsetopt correct_all
@@ -67,9 +58,8 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 zstyle ':prezto:module:git:alias' skip 'yes'
 # zstyle ':prezto:module:prompt' theme 'sorin'
 zstyle ':prezto:module:prompt' pwd-length 'long'
-zstyle ':prezto:module:terminal' auto-title 'no'
 zstyle ':prezto:module:autosuggestions' color 'yes'
-zstyle ':prezto:module:python' autovenv 'yes'
+# zstyle ':prezto:module:python' autovenv 'yes'
 zstyle ':prezto:load' pmodule \
 	'environment' \
 	'editor' \
@@ -82,14 +72,10 @@ zstyle ':prezto:load' pmodule \
 
 antigen use prezto
 
-
 # default bundles
 antigen bundle rupa/z z.sh
-#antigen bundle Vifon/deer
 antigen bundle zdharma/fast-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle willghatch/zsh-cdr
-antigen bundle zsh-users/zaw
 
 # check login shell
 if [[ -o login ]]; then
@@ -203,7 +189,6 @@ setopt ignorebraces
 setopt interactivecomments
 export UPDATE_ZSH_DAYS=1
 
-alias r='tldr'
 # Peco history selection
 function peco-history-selection() {
   local tac
@@ -220,6 +205,9 @@ bindkey '^R' peco-history-selection
 export PATH=$PATH:$HOME/usr/local/bin:/root/.cargo/bin
 #export PATH=/usr/local/cuda-9.0/bin${PATH:+:${PATH}}
 #export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+#出问题时，看看这里，debug
+export PATH=/usr/local/cuda/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 
 
 zstyle ':completion:*:matches' group 'yes'
@@ -232,94 +220,16 @@ zstyle ':completion:*:warnings' format $'\e[01;31m -- No Matches Found --\e[0m'
 zstyle ':completion:*:corrections' format $'\e[01;32m -- %d (errors: %e) --\e[0m'
 
 
-alias s='vi ~/.zshrc'
-alias sr='zsh'
-alias tm='tmux a -d ; tmux new -s jiqun'
-alias t='mv -ft /opt/data/private/trash'
-alias v='vim'
-alias vi='vim'
-alias vr='vi ~/.SpaceVim/vimrc'
-
-alias -s gz='tar -xzvf'
-alias -s rar='tar -xzvf'
-alias -s tgz='tar -xzvf'
-alias -s zip='unzip'
-alias -s bz2='tar -xjvf'
-alias -s py=vi
-alias -s html=cat
-##加了这行导致./build_ops.sh等执行不了
-#alias -s sh=vi
-alias -s py=vi
-alias -s toml=vi
-alias -s md=cat
-alias m=mv
-alias c=cp
-
-
-alias rm='rm -Ir --preserve-root'
-alias cp='cp -ir'
-alias ta='tail -fn 50 nohup.out'
-alias ut='ntat'
-alias uz='unzip'
-alias sc='source'
-alias vi='vim'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-alias -- -='cd -'
-
-alias db='pudb3'
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-alias egrep='egrep --color=auto'
-alias fd='f(){ find "$1" -path "*$2*"; }; f'
-alias ht='houtai(){ nohup '$2' >$1 2>&1 &; }; houtai'
-alias fdroot='f(){ find / -path "*$1*"; }; f'
-#alias pip='wfpip(){ nopro && pip $* && pro; }; wfpip'
-alias fgrep='fgrep --color=auto'
-alias grep='grep --color=auto'
-alias hl='f(){ du -sh $1* | sort -hr; }; f'
-alias k9='kill -9'
-#alias l='ls -CF1GhFBtr --color=alway'
-alias l='ls -1htr --color=alway'
-alias l.='ls -d .* --color=auto'
-alias la='ls -ACF1GhFBtr --color=alway'
-alias ll='ls -gGhtrFB --color=auto'
-alias lla='ls -gGhtrFBA --color=auto'
-alias lr='ls -gGhtFB --color=auto'
-alias ls='ls -hrt --color=auto'
-alias md='mkdir -p'
-alias mcd='mcd(){ mkdir $1 && cd $1; }; mcd'
-alias mt='mv -t ~/Trash'
-alias mv='mv -i'
-alias df='df -h'
-alias du='du -h'
-alias wfpid='ps -aux |grep -v grep|grep'
-alias myip='curl cip.cc'
-alias nopro='export ALL_PROXY= '
-alias py='python'
-alias rm='rm -Ir --preserve-root'
-alias srm='rm -Irf --preserve-root'
-alias sc='source'
-alias vi='vim'
-alias wget='wget -c'
-alias wg='wget -c'
-alias wgname='wget -c -O "change_name"'
-alias ns='nvidia-smi'
-alias h='history | grep'
-alias mcd='mcd(){ mkdir $1 && cd $1; }; mcd'
-alias top='htop'
-alias gc='git clone'
-
 function list_all() {
     emulate -L zsh
-    ls -l1GhtrFB --color=always
+    ls -1GhtrFB --color=alway
 }
 function wf_print() {
     emulate -L zsh
     echo "----------------上面的是ls的文件--------------------"
 }
 chpwd_functions=(${chpwd_functions[@]} "list_all" "wf_print")
+
 
  # 00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
  # Text color codes:
@@ -396,12 +306,7 @@ LS_COLORS=$LS_COLORS:'*.txt=0'        # Plain/Text        = Default Foreground
 LS_COLORS=$LS_COLORS:'*.n=43;37'        # Plain/Text        = Default Foreground
 export LS_COLORS
 
-alias vd='vim -d'
-alias ac='ack'
-alias a='ag'
 
-#hstr，和peco类似
-alias hh=hstr                    # hh to be alias for hstr
 setopt histignorespace           # skip cmds w/ leading space from history
 export HSTR_CONFIG=hicolor       # get more colors
 #回到行首，   \C-j是ctrl j， 和回车一样
@@ -409,13 +314,6 @@ export HSTR_CONFIG=hicolor       # get more colors
 
 
 export LC_ALL=zh_CN.UTF-8
-alias vt='vim ~/.tmux.conf'
-alias x='extract'
-
-alias pi='pip install'
-alias pip3='pip'
-alias g='gpustat -p -u -c --debug --no-header'
-alias ai='aptitude install'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -437,7 +335,6 @@ autoload -U run-help
 autoload run-help-git
 autoload run-help-svn
 autoload run-help-svk
-alias help=run-help
 
 
 autoload -U promptinit
@@ -445,11 +342,13 @@ promptinit
 autoload -U colors && colors
 #export PS1="%S %F%d%f %s num_of_job:%j  
 #export PS1="%S %F%d%f %s  "$'\n'" >"
-export PS1="@ %{$fg[cyan]$bg[white]%}%~ "$'\n'">%{$reset_color%}"
+export PS1="3d容器-当前路径 %{$fg[cyan]$bg[white]%}%~ "$'\n'">%{$reset_color%}"
 #Red, Blue, Green, Cyan, Yellow, Magenta, Black & White
 
-alias h='history | grep'
-alias nopro='export ALL_PROXY= '
-alias git='pro &&  git'
-pro
-bindkey -s "\C-o" "clear \C-j"    
+export ALL_PROXY=socks5://219.223.187.35:4080
+echo "新zsh"
+
+bindkey -s "\C-o" "clear \C-j"
+if [ -f ~/.wf_alias ]; then
+    . ~/.wf_alias
+fi

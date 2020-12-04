@@ -1,77 +1,9 @@
 set -x
 
-cat> /etc/hosts<<EOF
-# GitHub hosts 
-192.30.253.112    GitHub: Where the world builds software 
-192.30.253.119    gist.github.com
-151.101.184.133    assets-cdn.github.com
-151.101.184.133    GitHub: Where the world builds software
-151.101.184.133    gist.githubusercontent.com
-151.101.184.133    cloud.githubusercontent.com
-151.101.184.133    camo.githubusercontent.com
-151.101.184.133    avatars0.githubusercontent.com
-151.101.184.133    GitHub: Where the world builds software
-151.101.184.133    avatars2.githubusercontent.com
-151.101.184.133    GitHub: Where the world builds software
-151.101.184.133    GitHub: Where the world builds software
-151.101.184.133    avatars5.githubusercontent.com
-151.101.184.133    GitHub: Where the world builds software
-151.101.184.133    avatars7.githubusercontent.com
-151.101.184.133    GitHub: Where the world builds software
-151.101.185.194    github.global.ssl.fastly.net
-
-## some may be the same
-## GitHub Start
-192.30.253.112 http://github.com
-192.30.253.113 http://github.com
-151.101.184.133 http://assets-cdn.github.com
-151.101.185.194 http://github.global.ssl.fastly.net
-192.30.253.112 http://github.com
-192.30.253.113 http://github.com
-192.30.253.118 http://gist.github.com
-151.101.185.194 http://github.global.ssl.fastly.net
-151.101.129.194 http://github.global.ssl.fastly.net
-151.101.65.194 http://github.global.ssl.fastly.net
-151.101.1.194 http://github.global.ssl.fastly.net
-151.101.193.194 http://github.global.ssl.fastly.net
-151.101.77.194 http://github.global.ssl.fastly.net
-151.101.229.194 http://github.global.ssl.fastly.net
-151.101.113.194 http://github.global.ssl.fastly.net
-151.101.196.133 http://assets-cdn.github.com
-151.101.24.133 http://assets-cdn.github.com
-185.199.111.153 http://assets-cdn.github.com
-185.199.110.153 http://assets-cdn.github.com
-185.199.108.153 http://assets-cdn.github.com
-185.199.109.153 http://assets-cdn.github.com
-151.101.112.133 http://assets-cdn.github.com
-151.101.112.133 http://avatars0.githubusercontent.com
-151.101.112.133 http://avatars1.githubusercontent.com
-151.101.184.133 http://avatars2.githubusercontent.com
-151.101.12.133 http://avatars3.githubusercontent.com
-151.101.12.133 http://avatars4.githubusercontent.com
-151.101.184.133 http://avatars5.githubusercontent.com
-151.101.184.133 http://avatars6.githubusercontent.com
-151.101.184.133 http://avatars7.githubusercontent.com
-151.101.12.133 http://avatars8.githubusercontent.com
-151.101.184.133 http://raw.githubusercontent.com
-151.101.112.133 http://gist.githubusercontent.com
-151.101.184.133 http://cloud.githubusercontent.com
-151.101.112.133 http://camo.githubusercontent.com
-
-52.216.227.168 http://github-cloud.s3.amazonaws.com
-
-192.30.253.112 http://github.com
-
-185.199.108.153 http://assets-cdn.github.com
-
-151.101.185.194 http://github.global.ssl.fastly.net
-
-140.82.113.10 http://codeload.github.com
-
-# 下载慢问题
-219.76.4.4 http://github-cloud.s3.amazonaws.com
-## GitHub End
-EOF
+cat git_url.txt>>/etc/hosts
+# Ubuntu uses network-manager instead of the traditional Linux networking model. so you should restart the network-manager service instead of the network service
+# /etc/rc.d/init.d/network restart
+service network-manager restart
 
 cat>>~/.bashrc<<EOF
 alias ai='apt install -y -qq'
@@ -96,23 +28,23 @@ yes | (ln -s /opt/data/private/anaconda3 ~/)
 # unset ALL_PROXY
 
 yes | (add-apt-repository ppa:ultradvorka/ppa && apt-get update && apt-get upgrade)
-yes | (apt install aptitude ;aptitude update ; aptitude install sudo python3-pip hstr zsh progress libevent-dev)
+yes | (apt install aptitude ;aptitude update ; ai sudo python3-pip hstr zsh progress libevent-dev)
 
 export ALL_PROXY=' '
 pip3 install pysocks
 pro
 
-yes | (aptitude install git ; aptitude install tmux ;aptitude install vim-gtk; aptitude install ack)
-yes | (aptitude install exiftool htop tree zdata locales language-pack-zh-hans language-pack-zh-hans-base)
-yes | (aptitude install curl; pip3 install --upgrade pip ; pip3 install pudb ; pip3 install gpustat ; pip3 install tldr )
+yes | (ai git ; ai tmux ;ai vim-gtk; ai ack)
+yes | (ai exiftool htop tree zdata locales language-pack-zh-hans language-pack-zh-hans-base)
+yes | (ai curl; pip3 install --upgrade pip ; pip3 install pudb ; pip3 install gpustat ; pip3 install tldr )
 yes | (sh -c "$(curl -fSL https://raw.githubusercontent.com/hoseahsu/oh-my-tmux/master/install.sh)" ; curl -sLf https://spacevim.org/cn/install.sh | bash )
 yes | (apt install python3-dev python3-pip python3-setuptools ; pip3 install thefuck)
-yes | (apt-get install language-pack-zh-hans language-pack-zh-hans-base ; aptitude install peco wget)
+yes | (apt-get install language-pack-zh-hans language-pack-zh-hans-base ; ai peco wget)
 yes | (ai npm; npm install -g tldr)
 
 #Linux日期不准确，要更改 Linux 系统整个系统范围的时区可以使用如下命令：
 locale-gen zh_CN.UTF-8 
-sudo rm -f /etc/localtime && sudo ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+rm -f /etc/localtime &&  ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 yes | (cp ~/dot_file/vimrc ~/.SpaceVim/vimrc ; cp ~/dot_file/.tmux.conf  ~/.tmux.conf )
 mkdir -p ~/.SpaceVim.d/
 yes | (cp ~/dot_file/init.toml  ~/.SpaceVim.d/; cp ~/dot_file/.zshrc ~/ )  
@@ -127,14 +59,15 @@ chmod u+x nvim.appimage
 yes | rm /usr/bin/vim
 mv squashfs-root / && ln -s /squashfs-root/AppRun /usr/bin/vim
 
-yes | (aptitude install silversearcher-ag)
+yes | (ai silversearcher-ag)
 mv /etc/apt/apt.conf /etc/apt/apt.conf.luoyi
 yes | unminimize
 
 # 修改默认python
-sudo rm /usr/bin/python 
-sudo ln -s /usr/bin/python3.? /usr/bin/python 
+rm /usr/bin/python 
+ln -s /usr/bin/python3.? /usr/bin/python 
 chsh -s `which zsh`; 
+ln -s /opt/data/private/trash /t
 zsh
 
 #todo
