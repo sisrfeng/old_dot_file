@@ -31,7 +31,10 @@ yes | (ai exiftool htop tree zdata locales language-pack-zh-hans language-pack-z
 yes | (ai curl; pip3 install --upgrade pip ; pip3 install pudb ; pip3 install gpustat ; pip3 install tldr )
 yes | (sh -c "$(curl -fSL https://raw.githubusercontent.com/hoseahsu/oh-my-tmux/master/install.sh)" ; curl -sLf https://spacevim.org/cn/install.sh | bash )
 yes | (apt install python3-dev python3-pip python3-setuptools ; pip3 install thefuck)
-yes | (apt-get install language-pack-zh-hans language-pack-zh-hans-base ; ai peco wget)
+yes | (apt-get install language-pack-zh-hans language-pack-zh-hans-base ; ai peco wget mutt msmtp)
+touch ~/.msmtp.log
+postconf smtputf8_enable=no
+postfix reload
 yes | (ai npm; npm install -g tldr)
 
 #Linux日期不准确，要更改 Linux 系统整个系统范围的时区可以使用如下命令：
@@ -70,4 +73,3 @@ ln -s /usr/bin/python3.? /usr/bin/python
 chsh -s `which zsh`; 
 ln -s /opt/data/private/trash /t
 zsh
-
