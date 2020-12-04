@@ -19,8 +19,8 @@ ai install nscd
 # EOF
 
 yes | (ln -s /opt/data/private/anaconda3 ~/)
-yes | (add-apt-repository ppa:ultradvorka/ppa && apt-get update && apt-get upgrade)
-yes | (apt install aptitude ;aptitude update ; ai sudo python3-pip hstr zsh progress libevent-dev)
+yes | (add-apt-repository ppa:ultradvorka/ppa && apt-get -qq update && apt-get -qq upgrade)
+yes | (apt install aptitude ;aptitude update -q; ai sudo python3-pip hstr zsh progress libevent-dev)
 
 export ALL_PROXY=' '
 pip3 install pysocks
