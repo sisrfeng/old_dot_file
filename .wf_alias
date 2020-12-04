@@ -1,3 +1,5 @@
+alias apt='apt -q'
+alias apt-get='apt -q'
 #/* 加了这行导致./build_ops.sh等执行不了 */
 #/* alias alias -s sh=vi */
 alias ..='cd ..'

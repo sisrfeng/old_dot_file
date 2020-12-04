@@ -41,16 +41,24 @@ yes | (cp ~/dot_file/vimrc ~/.SpaceVim/vimrc ; cp ~/dot_file/.tmux.conf  ~/.tmux
 mkdir -p ~/.SpaceVim.d/
 yes | (cp ~/dot_file/init.toml  ~/.SpaceVim.d/; cp ~/dot_file/.zshrc ~/ )  
 
+sudo apt install neovim
+sudo apt install python-neovim
+sudo apt install python3-neovim
+
+
+# 要用vim 8以上版本，ycm不支持vim7.4，执行vimplus的install.sh会自动去下载最新的vim，但因为网络问题，git clone可能会失败，导致vim安装失败，你要确保vim版本必须是8以上的。
+###ubuntu 16以下,尝试：
 #nvim
 # curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 #下载好在dot_file了
-chmod u+x nvim.appimage
-./nvim.appimage
-./nvim.appimage --appimage-extract
-./squashfs-root/AppRun --version
-# Optional: exposing nvim globally
-yes | rm /usr/bin/vim
-mv squashfs-root / && ln -s /squashfs-root/AppRun /usr/bin/vim
+
+# chmod u+x nvim.appimage
+# ./nvim.appimage
+# ./nvim.appimage --appimage-extract
+# ./squashfs-root/AppRun --version
+##Optional: exposing nvim globally
+# yes | rm /usr/bin/vim
+# mv squashfs-root / && ln -s /squashfs-root/AppRun /usr/bin/vim
 
 yes | (ai silversearcher-ag)
 mv /etc/apt/apt.conf /etc/apt/apt.conf.luoyi
@@ -63,5 +71,3 @@ chsh -s `which zsh`;
 ln -s /opt/data/private/trash /t
 zsh
 
-#todo
-# 要用vim 8以上版本，ycm不支持vim7.4，执行vimplus的install.sh会自动去下载最新的vim，但因为网络问题，git clone可能会失败，导致vim安装失败，你要确保vim版本必须是8以上的。
